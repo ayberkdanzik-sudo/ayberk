@@ -1,74 +1,80 @@
-# Oyun Radarı
+# Oyun Radarı — Topluluk demosu v2
 
-Donanıma göre oyun keşfi için Türkçe, mobil uyumlu ve sunucu hesabı gerektirmeyen çalışan bir prototip.
+## Kurulumsuz aç
 
-## Kurulumsuz deneme
+ZIP’i klasöre çıkar ve **DEMOYU-AC.html** dosyasına çift tıkla. Güncel Chrome, Edge veya Firefox kullan. Terminal, domain veya hosting gerekmiyor. **GELISTIRME-RAPORU.html** dosyasını da çift tıklayarak rakip/gelir/gizlilik planını okuyabilirsin. Kaynak dosyalar da ZIP’in içindedir.
 
-ZIP dosyasını indirip çıkar. İçindeki `DEMOYU-AC.html` dosyasına çift tıkla. Chrome, Edge veya Firefox ile açabilirsin. Tek dosyalık sürüm stilleri, uygulama kodunu, fontları ve temsili kapakları içerir; terminal veya paket kurulumu gerektirmez. Bu dosya oluşturulduğu andaki demonun taşınabilir kopyasıdır; kaynak kod değişirse yeniden oluşturulmalıdır. Üyelik ve yorumlar yine yalnızca açtığın tarayıcıda saklanır.
+Forum > **Demo hesaplarını dene** > **admin** ile yönetim panelini açabilirsin.
 
-## Kaynak koddan çalıştırma
+- Admin e-posta: `admin@oyunradari.test`
+- Demo parola: `RadarDemo!2026`
+- Diğer örnek hesaplar: PixelGezgin, KareHizi. Hesap seçicisinden tek tıkla geçiş yapılır.
 
-Node.js 18+ ve Python 3 gerekir. Harici JavaScript bağımlılığı veya paket kurulumu yoktur.
+Bunlar yalnızca bu prototip için oluşturulmuş, herkese açık demo kimlikleridir. Gerçek kişisel bilgi veya başka yerde kullandığın bir parolayı girme. Birden fazla cihaz/kullanıcı arasında veri paylaşılmaz; her şey tarayıcıda saklanır.
+
+## Yeni özellikler
+
+- Telefon kaldırıldı; erişilebilen eski demo hesaplarının telefon alanı temizlenir. İsim/soyad isteğe bağlı.
+- 94 işlemci, 105 ekran kartı, model arama; laptop ve VRAM varyantları.
+- 8 etiketli örnek forum konusu ve 16 örnek yanıt; kategori, arama, sıralama ve sayfalama.
+- Admin: konu sabitleme, kilitleme, silme; medya ve bildirim incelemesi.
+- Gönderi/yanıtta en fazla 5 görsel (8 MB/adet), 1 video (100 MB ve en fazla 180 saniye).
+- Dosya imzası, gerçek görüntü açılabilirliği ve video süresi kontrolleri. Görsel yeniden kodlama; medya IndexedDB’de tutulur. Yeni medya onay bekler, onaylanmadan görünmez.
+- Özel mesaj, engelleme ve bildirme; aynı tarayıcıdaki demo hesapları arasında denenebilir.
+- Reklam görseli, https bağlantısı, yerleşim, tarih aralığı; düzenleme, duraklatma ve silme.
+- Oyun yorumlarında 5’li sayfalama, tarih sıralaması, açılır yazma alanı ve isteğe bağlı donanım bilgisi. Elden Ring’de 12 etiketli örnek yorum var.
+- Hesap verilerini dışa aktarma/silme. Gizlilik ekranından bütün yerel verileri temizleme.
+
+## Demo sınırları
+
+**Yeni oyunlar otomatik eklenmez:** 16 kayıtlık katalog sabittir. Admin > Oyun kataloğu üretim planını gösterir. İşleyen bir API/zamanlayıcı bağlantısı yoktur.
+
+**Performans ölçülmez:** CPU/GPU güç indeksleri ve oyun gereksinimleri sadeleştirilmiş demo değerleridir. FPS veya uyumluluk garantisi yoktur. Laptop TGP’si, entegre GPU paylaşımlı belleği, SSD, OS, DirectX, talimat seti, sürücü ve oyun sürümü ayrıca doğrulanmalı. GTA V verisi Legacy sürümünü temsil eder.
+
+**Kimlik ve mesajlar yereldir:** localStorage/IndexedDB gerçek sunucu güvenliği sağlamaz. Admin rolü istemcide değiştirilebilir. E-posta doğrulaması yalnızca ekranda gösterilen kodla simüle edilir; gerçek e-posta gönderilmez. Mesajlar internet üzerinden iletilmez veya uçtan uca şifrelenmez. Parolalar tuzlanmış PBKDF2 özetidir; üretim hesap hizmeti değildir.
+
+**Medya sınıflandırması bağlı değildir:** otomatik dosya/limit kontrolleri, yetişkin içerik veya yasa dışı içerik tespiti değildir. Tüm medya yönetici incelemesine gider. Gerçek yayında sunucuda karantina, tarama, sınıflandırma ve insan incelemesi gerekir. Video ham dosyası bu demoda saklanır; üretimde yeniden kodlama ve metadata temizleme gerekir.
+
+**Reklamlar yereldir:** gerçek reklam ağı, gelir veya canlı trafik ölçümü yoktur. Aynı konumda birden fazla uygun kampanya varsa ilk kaydedilen görünür.
+
+## Araştırma ve ürün planı
+
+[Ürün, rakipler, gizlilik ve gelir planını oku](docs/URUN-VE-GELIR-PLANI.md). Kullanıcının 10 sorusuna karşılık gelen kararları, aday kaynakları ve sonraki adımları içerir. Canlı rakip/official sitelerine bu ortamdan erişim 403 ile engellendi; belgede bilinen ürün konumlandırmaları ile doğrulanmamış güncel ayrıntılar ayrılır.
+
+## Geliştirici komutları
+
+Node.js 18+ ve Python 3 gerekir. Uygulamanın harici JavaScript çalışma bağımlılığı yoktur. Mevcut checkout’u kullan; ayrıca Git worktree gerekmez.
 
 ```sh
 cd /workspace/ayberk
 npm run dev
+npm test
+npm run bundle
 ```
 
-Geliştirme sunucusu 3000 portunda dinler. Bu bir geliştirme sunucusudur; internete açık üretim sunucusu olarak kullanılmamalıdır. Ortam zaten izoledir; mevcut checkout kullanılır, ayrıca Git worktree oluşturulmaz.
+Geliştirme sunucusu 3000 portunda çalışır. Üretim sunucusu değildir. `npm run bundle`, kaynakları/fontları/SVG yedekleri tekrar **DEMOYU-AC.html** içine gömer. Kaynakları değiştirince bu komutla taşınabilir dosyayı güncelle.
+
+16 birim testi: karşılaştırma sonuçları, model çeşitleri, görsel/video sayı/boyut/süre sınırları ve dosya imzaları.
+
+İsteğe bağlı tarayıcı testi için Playwright ve Chromium gerekir. Ortamda bu araçlar önceden mevcut. Başka bir geliştirme makinesinde ayrıca kurulmalıdır. `CHROMIUM_PATH` sistem Chromium yolunu, `DEMO_URL` test adresini değiştirebilir. Testten önce iki sentetik video oluşturulur:
 
 ```sh
-npm test
+ffmpeg -v error -f lavfi -i color=c=blue:s=32x32:r=1 -t 181 -c:v libvpx-vp9 -y /tmp/radar-long.webm
+ffmpeg -v error -f lavfi -i color=c=green:s=32x32:r=2 -t 2 -c:v libvpx-vp9 -y /tmp/radar-short.webm
+node tests/browser.cjs
 ```
 
-7 karşılaştırma testi: önerilen donanım, RAM/VRAM yetersizliği, minimum sınırı, orta düzey, entegre grafik ve bilinmeyen donanım.
+Tarayıcı testi: telefon göçü, kayıt formu, donanım araması, 100 yorumun 20 sayfaya ayrılması, forum arama/sayfalama, admin girişi, kilit, metin kaçışlama, özel mesaj/engelleme, üye/admin ekran ayrımı, reklam oluşturma/duraklatma, altıncı görsel reddi, gerçek 181 saniyelik videonun reddi, sahte dosya imzası reddi, 5 görsel + kısa videonun kaydı, denetim kuyruğu ve onaylanınca gösterimi, 390 px mobil görünümler.
 
-## Denenebilen özellikler
+## Dosyalar ve haklar
 
-- İşlemci, ekran kartı, RAM ve VRAM seçimi; 1080p için 0–3 uyumluluk puanı.
-- 16 oyunluk sabit demo kataloğu; 15 tür filtresi, arama ve sıralama.
-- Minimumu karşılamayan oyunları varsayılan gizleme; “Filtrele” ile gösterme ve tek oyun karşılaştırması.
-- Oyun açıklamaları, Steam bağlantıları ve favori kütüphanesi.
-- İsim, soyad, e-posta, telefon, nickname ve demo parolasıyla kayıt.
-- Yanlış kod kontrolü ve 10 dakika süreli doğrulama kodu önizlemesi; **gerçek e-posta gönderilmez**, kod ekranda gösterilir.
-- Giriş/çıkış, nickname ile oyun yorumları, forum konusu ve yanıt oluşturma.
-- Footer içindeki reklam yönetiminden sponsor başlığı, https bağlantısı ve buton metni ekleme/kaldırma.
-- Gizlilik penceresinden tüm yerel demo verilerini temizleme.
+- `app.js`, `style.css`: keşif ve ortak arayüz.
+- `community.js`: demo hesaplar, forum, yorumlar, mesajlar, reklam ve yönetim ekranları.
+- `hardware.js`, `engine.js`: elle hazırlanmış donanım ve oyun uyumluluk demo verisi.
+- `media.js`: istemci medya kontrolleri ve IndexedDB.
+- `scripts/bundle.cjs`: tek dosyalık demoyu üretir.
+- `assets/`: yerel fontlar ve etiketli temsili SVG kapaklar.
 
-Hesaplar, yorumlar, konular, favoriler, donanım ve reklamlar yalnızca bu tarayıcıdaki `radar-*` localStorage anahtarlarında tutulur. Kullanıcılar arasında paylaşılmaz. Demo yönetimi herkese açıktır. Parolalar rastgele tuzla PBKDF2-SHA256 (100.000 iterasyon) özeti olarak saklanır; bu yapı üretim kimlik doğrulaması değildir. Gerçek kişisel bilgi, telefon veya tekrar kullanılan parola girilmemelidir. Web Crypto için localhost veya HTTPS gerekir.
+Steam CDN’ye erişim olduğunda oyun kapağı yüklenir. Erişim yoksa **TEMSİLİ KAPAK** etiketli yerel çizim gösterilir; bunlar gerçek oyun ekran görüntüsü değildir. Gerçek oyun görsellerinin kullanım koşulları yayın öncesinde kontrol edilmelidir. Steam görsellerinin yüklenmesi dış sunucuya IP adresi iletir.
 
-## Performans tahmininin sınırları
-
-`engine.js` içindeki veriler **elle hazırlanmış, sadeleştirilmiş demo verileridir**. CPU/GPU puanları doğrulanmış bir benchmark veri tabanından gelmez. En zayıf CPU, GPU, RAM veya VRAM oranı sonucu belirler. Minimumu karşılamayan sistem 0; minimum sınırına %20’den yakın sistem 1; minimum üzerinde ve önerilen altında 2; tüm önerilen değerleri karşılayan sistem 3 puan alır. FPS hesaplanmaz.
-
-İşletim sistemi, DirectX, işlemci talimat seti, SSD gereksinimi, termal durum, oyun sürümü ve sürücüler bu demoda doğrulanmaz. Oyunların yanındaki sayılar demo seçki puanıdır; canlı inceleme puanı değildir. GTA V verileri Legacy sürümü içindir. Liste güncel Steam kataloğu değildir.
-
-## Görseller ve fontlar
-
-Steam’in herkese açık CDN görselleri denenir. Ortam ağ politikası bunları engellerse yerelde üretilmiş, **“TEMSİLİ KAPAK”** etiketli SVG manzaralar gösterilir. Bunlar oyuna ait ekran görüntüleri değildir. Gerçek görseller oyun sahiplerine aittir; yayından önce kullanım koşulları kontrol edilmelidir.
-
-Gerekli görsel alan adları: `cdn.akamai.steamstatic.com`, `shared.akamai.steamstatic.com`. Mevcut makinede bu alan adlarından HTTP 403 alındı. Ağ izni taslağı kaydetmek çalışan makinenin politikasını değiştirmez; kullanıcı ortam ayarlarında kaydedip yayınlamalıdır. SVG yedekler sayesinde demo bu erişime bağlı değildir.
-
-Manrope ve DM Sans değişken fontları Fontsource 5.3.0 paketlerinden alınarak yerelde tutulur. Lisansları `assets/fonts/` içindedir. Font yüklemek için Google bağlantısı veya ilave ağ izni gerekmez.
-
-## Yayına geçiş
-
-Domain ve ücretli hosting bu prototipi denemek için gerekli değil. İlk paylaşılabilir sürüm ücretsiz statik barındırmada çalışabilir; bu depoda henüz dağıtım yapılmadı.
-
-Gerçek ürün için gereken ayrı çalışmalar:
-
-1. Sunucu API’si ve kalıcı veritabanı; güvenli oturumlar, sunucuda yetki kontrolü, parola sıfırlama, hız sınırları ve gerçek e-posta doğrulaması.
-2. Kullanım koşulları uygun bir katalog kaynağı; Steam/metaveri servislerinden zamanlanmış senkronizasyon, önbellekleme, kopya/eksik kayıt kontrolü. İnsan tarafından yazılmış sistem gereksinimleri doğrudan güvenilir bir performans puanına dönüşmez; normalize ve doğrulanmış donanım verisi gerekir.
-3. Oyun görsellerinin izinleri, güvenilir minimum/önerilen gereksinimler ve platform/oyun sürümü ayrımı.
-4. Forum/yorum şikayeti, spam önleme, moderasyon, engelleme ve sunucuda yönetici rolleri.
-5. KVKK aydınlatması, hesap/veri silme, veri minimizasyonu ve gerekli çerez onayı. Telefonu zorunlu toplamanın gerekçesi değerlendirilmelidir.
-6. Yöneticiye özel reklam paneli; reklam onayı, zamanlama, ölçüm ve güvenli hedef bağlantıları.
-7. Erişilebilirlik, SEO için oyun bazlı kalıcı URL’ler, yedekleme ve üretim izleme.
-
-## Gelir modeli
-
-Ziyaretçiler doğrudan ödeme yaratmaz. Gelir; reklam ağına kabul edilip reklam gösterim/tıklamalarından, doğrudan sponsorluktan veya koşulları uygun satış ortaklığından gelebilir. Kazanç; trafik kalitesi, ülke, reklam yerleşimi, reklam engelleyiciler ve sözleşmelere bağlıdır. Trafik veya gelir garantisi yoktur. İçerik, veri doğruluğu ve topluluk moderasyonu düzenli bakım gerektirir; tamamen pasif bir işletme değildir.
-
-## Doğrulama
-
-Chromium/Playwright ile masaüstünde 1440×1050 ve mobilde 390×844 boyutları denendi: filtreleme, arama, favoriler, düşük donanım, desteklenmeyen oyunu arama, yanlış/doğru kayıt kodu, giriş/yanlış parola, oyun yorumu, forum konusu/yanıtı, reklam ekleme/kaldırma, sayfa yenileme sonrası kalıcılık ve Escape ile pencere kapatma geçti. JavaScript çalışma hatası gözlenmedi. Bu testler gerçek e-posta, çok kullanıcılı sunucu, otomatik senkronizasyon veya canlı reklam gelirini doğrulamaz.
+Manrope ve DM Sans fontları Fontsource 5.3.0’dan gelir; lisansları `assets/fonts/` içindedir. Fontlar için dış ağ gerekmez. Medya seçimi tarayıcı depolama iznine bağlıdır. Tek dosyayı yeni bir klasöre taşıdığında tarayıcı yerel depolamayı farklı değerlendirebilir; demo verilerini başka klasöre taşıma garantisi verilmez.

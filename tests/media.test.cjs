@@ -1,0 +1,12 @@
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const {checkSelection,signature,checkDuration}=require('../media.js');
+const img={type:'image/png',size:1024};
+const video={type:'video/webm',size:2048};
+test('accepts five images and one video',()=>assert.equal(checkSelection([...Array(5).fill(img),video]),true));
+test('rejects six images',()=>assert.throws(()=>checkSelection(Array(6).fill(img)),/5 görsel/));
+test('rejects two videos',()=>assert.throws(()=>checkSelection([video,video]),/1 video/));
+test('rejects SVG and executable payload types',()=>{assert.throws(()=>checkSelection([{type:'image/svg+xml',size:100}]),/Desteklenmeyen/);assert.throws(()=>checkSelection([{type:'application/javascript',size:100}]))});
+test('rejects empty and oversized files',()=>{assert.throws(()=>checkSelection([{...img,size:0}]));assert.throws(()=>checkSelection([{...img,size:8*1024*1024+1}]));assert.throws(()=>checkSelection([{...video,size:100*1024*1024+1}]))});
+test('allows exactly 180 seconds and rejects longer or unreadable video',()=>{assert.equal(checkDuration(180),true);for(const n of [180.001,181,NaN,Infinity,0,-1])assert.throws(()=>checkDuration(n))});
+test('checks binary signatures rather than trusting extensions',()=>{assert.equal(signature(Uint8Array.from([137,80,78,71,13,10,26,10]),'image/png'),true);assert.equal(signature(new TextEncoder().encode('<svg onload="alert(1)"/>'),'image/png'),false);assert.equal(signature(new TextEncoder().encode('RIFF0000WEBP'),'image/webp'),true);assert.equal(signature(new TextEncoder().encode('0000ftyp'),'video/mp4'),true);assert.equal(signature(Uint8Array.from([26,69,223,163]),'video/webm'),true)});

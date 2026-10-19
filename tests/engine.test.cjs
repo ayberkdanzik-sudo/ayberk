@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const {games,cpus,gpus,evaluate} = require('../engine.js');
-const high={cpu:cpus.at(-1).name,gpu:'AMD Radeon RX 7800 XT',ram:64,vram:16};
+const high={cpu:'AMD Ryzen 7 9800X3D',gpu:'AMD Radeon RX 7800 XT',ram:64,vram:16};
 test('recommended hardware receives three points',()=>{for(const g of games)assert.equal(evaluate(high,g).score,3,g.name)});
 test('insufficient memory prevents compatibility',()=>{const g=games.find(g=>g.name==='Elden Ring');assert.equal(evaluate({...high,ram:4},g).score,0)});
 test('insufficient VRAM prevents compatibility despite fast GPU',()=>{const g=games.find(g=>g.name==='Cyberpunk 2077');assert.equal(evaluate({...high,vram:2},g).score,0)});

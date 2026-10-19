@@ -1,0 +1,22 @@
+OYUN RADARI — DEMO v2
+
+1. ZIP dosyasını bir klasöre çıkar.
+2. DEMOYU-AC.html dosyasına çift tıkla.
+3. Forum > Demo hesaplarını dene > admin ile yönetici olarak gez.
+
+Admin e-posta: admin@oyunradari.test
+Demo parola: RadarDemo!2026
+
+GELISTIRME-RAPORU.html dosyasında rakip fikirleri, gelir planı,
+otomatik oyun kataloğu ve güvenlik gereksinimlerini okuyabilirsin.
+
+Telefon alanı kaldırıldı. 94 işlemci ve 105 ekran kartı var.
+8 örnek forum konusu, yanıtlar, özel mesajlar, reklam paneli,
+medya yükleme ve inceleme, sayfalı yorumlar denenebilir.
+
+Medya: en fazla 5 görsel + 1 video. Video en fazla 3 dakika.
+Yeni medya, admin inceleme kuyruğunda onaylanana kadar gizlidir.
+
+Bu dosya yerel demodur: gerçek e-posta, çok kullanıcılı sunucu,
+otomatik yeni oyun senkronizasyonu veya AI içerik sınıflandırması
+bağlı değildir. Gerçek kişisel bilgi/parola girme.

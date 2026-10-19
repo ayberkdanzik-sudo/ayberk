@@ -1,0 +1,3 @@
+const test=require('node:test');const assert=require('node:assert/strict');const {cpus,gpus}=require('../hardware.js');
+test('expanded hardware has unique searchable model names and positive indices',()=>{assert.ok(cpus.length>=90);assert.ok(gpus.length>=100);for(const list of [cpus,gpus]){assert.equal(new Set(list.map(x=>x.name)).size,list.length);assert.ok(list.every(x=>Number.isFinite(x.score)&&x.score>0))}});
+test('VRAM variants and laptop variants remain distinct',()=>{assert.ok(gpus.find(x=>x.name==='NVIDIA GeForce RTX 4060 (Laptop)'));assert.ok(gpus.find(x=>x.name==='NVIDIA GeForce RTX 4060'));assert.equal(gpus.find(x=>x.name==='NVIDIA GeForce RTX 4060 Ti 8GB').vram,8);assert.equal(gpus.find(x=>x.name==='NVIDIA GeForce RTX 4060 Ti 16GB').vram,16)});
