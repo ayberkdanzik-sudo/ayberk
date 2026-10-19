@@ -2,7 +2,11 @@
 
 Donanıma göre oyun keşfi için Türkçe, mobil uyumlu ve sunucu hesabı gerektirmeyen çalışan bir prototip.
 
-## Çalıştırma
+## Kurulumsuz deneme
+
+ZIP dosyasını indirip çıkar. İçindeki `DEMOYU-AC.html` dosyasına çift tıkla. Chrome, Edge veya Firefox ile açabilirsin. Tek dosyalık sürüm stilleri, uygulama kodunu, fontları ve temsili kapakları içerir; terminal veya paket kurulumu gerektirmez. Bu dosya oluşturulduğu andaki demonun taşınabilir kopyasıdır; kaynak kod değişirse yeniden oluşturulmalıdır. Üyelik ve yorumlar yine yalnızca açtığın tarayıcıda saklanır.
+
+## Kaynak koddan çalıştırma
 
 Node.js 18+ ve Python 3 gerekir. Harici JavaScript bağımlılığı veya paket kurulumu yoktur.
 
