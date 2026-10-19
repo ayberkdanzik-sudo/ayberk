@@ -1,4 +1,4 @@
-# Oyun Radarı — Topluluk demosu v2
+# Oyun Radarı — Topluluk demosu v3
 
 ## Kurulumsuz aç
 
@@ -12,9 +12,15 @@ Forum > **Demo hesaplarını dene** > **admin** ile yönetim panelini açabilirs
 
 Bunlar yalnızca bu prototip için oluşturulmuş, herkese açık demo kimlikleridir. Gerçek kişisel bilgi veya başka yerde kullandığın bir parolayı girme. Birden fazla cihaz/kullanıcı arasında veri paylaşılmaz; her şey tarayıcıda saklanır.
 
-## Yeni özellikler
+## v3 eklemeleri
 
-- Telefon kaldırıldı; erişilebilen eski demo hesaplarının telefon alanı temizlenir. İsim/soyad isteğe bağlı.
+9 reklam panosu, gece/gündüz modu, reklam/şikâyet/öneri başvuruları, yönetici gelen kutusu, üye yönetimi, yerel grafik raporları, alıntılı yanıt, konu takibi, mesaj alıcısı araması ve açıkça işaretli medya sınıflandırma senaryoları. Ayrıntılı durum ve maliyet raporu: [V3-DURUM-VE-YAYIN-PLANI.md](docs/V3-DURUM-VE-YAYIN-PLANI.md) veya kurulumsuz GELISTIRME-RAPORU.html.
+
+Telefon yalnızca reklam iletişim başvurusunda bulunur; üyelikte kaldırılmıştır. Ziyaret raporu bu tarayıcıyı ölçer; örnek trafik ayrı seçenektir. Gerçek servis entegrasyonları yapılmış değildir.
+
+## Korunan özellikler
+
+- Üyelikten telefon kaldırıldı; erişilebilen eski demo hesaplarının telefon alanı temizlenir. İsim/soyad isteğe bağlı.
 - 94 işlemci, 105 ekran kartı, model arama; laptop ve VRAM varyantları.
 - 8 etiketli örnek forum konusu ve 16 örnek yanıt; kategori, arama, sıralama ve sayfalama.
 - Admin: konu sabitleme, kilitleme, silme; medya ve bildirim incelemesi.
@@ -78,3 +84,6 @@ Tarayıcı testi: telefon göçü, kayıt formu, donanım araması, 100 yorumun 
 Steam CDN’ye erişim olduğunda oyun kapağı yüklenir. Erişim yoksa **TEMSİLİ KAPAK** etiketli yerel çizim gösterilir; bunlar gerçek oyun ekran görüntüsü değildir. Gerçek oyun görsellerinin kullanım koşulları yayın öncesinde kontrol edilmelidir. Steam görsellerinin yüklenmesi dış sunucuya IP adresi iletir.
 
 Manrope ve DM Sans fontları Fontsource 5.3.0’dan gelir; lisansları `assets/fonts/` içindedir. Fontlar için dış ağ gerekmez. Medya seçimi tarayıcı depolama iznine bağlıdır. Tek dosyayı yeni bir klasöre taşıdığında tarayıcı yerel depolamayı farklı değerlendirebilir; demo verilerini başka klasöre taşıma garantisi verilmez.
+
+
+V3 doğrulama: `npm test`, `npm run test:browser`, `npm run test:studio`. Tek dosyalık çıktıyı da sınamak için `DEMO_URL=http://127.0.0.1:3000/DEMOYU-AC.html npm run test:studio`. Raporu üretmek için `npm run report`, demoyu üretmek için `npm run bundle`.

@@ -1,3 +1,5 @@
+> Bu dosya v2 tarihçesidir. Güncel durum ve maliyetler için V3-DURUM-VE-YAYIN-PLANI.md dosyasını okuyun.
+
 # Oyun Radarı: ürün, rakipler ve gelir planı
 
 Tarih: 19 Ekim 2026. Bu belge, ikinci demo güncellemesinin kararlarını ve üretim gereksinimlerini anlatır.

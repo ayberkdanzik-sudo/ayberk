@@ -1,4 +1,4 @@
-OYUN RADARI — DEMO v2
+OYUN RADARI — DEMO v3
 
 1. ZIP dosyasını bir klasöre çıkar.
 2. DEMOYU-AC.html dosyasına çift tıkla.
@@ -7,16 +7,17 @@ OYUN RADARI — DEMO v2
 Admin e-posta: admin@oyunradari.test
 Demo parola: RadarDemo!2026
 
-GELISTIRME-RAPORU.html dosyasında rakip fikirleri, gelir planı,
-otomatik oyun kataloğu ve güvenlik gereksinimlerini okuyabilirsin.
+GELISTIRME-RAPORU.html: yapılanlar/yapılmayanlar, nedenler,
+çözümler, benchmark/API kaynakları, maliyet ve reklam planı.
 
-Telefon alanı kaldırıldı. 94 işlemci ve 105 ekran kartı var.
-8 örnek forum konusu, yanıtlar, özel mesajlar, reklam paneli,
-medya yükleme ve inceleme, sayfalı yorumlar denenebilir.
+Yeni: 9 reklam panosu, gece/gündüz, iletişim başvuruları,
+üye yönetimi, yerel raporlar, alıntılı cevap, konu takibi,
+nickname arama ve medya sınıflandırma senaryoları.
 
-Medya: en fazla 5 görsel + 1 video. Video en fazla 3 dakika.
-Yeni medya, admin inceleme kuyruğunda onaylanana kadar gizlidir.
+İçerik denetiminde 3 güvenli test görseli oluşturabilirsin.
+Sınıflandırma simülasyondur, gerçek AI analiz servisi değildir.
 
-Bu dosya yerel demodur: gerçek e-posta, çok kullanıcılı sunucu,
-otomatik yeni oyun senkronizasyonu veya AI içerik sınıflandırması
-bağlı değildir. Gerçek kişisel bilgi/parola girme.
+Veriler sadece bu tarayıcıda saklanır. Gerçek e-posta servisi,
+otomatik yeni oyun güncellemesi ve üretim güvenliği yoktur.
+Üyelikte telefon istenmez; reklam başvurusunda istenir.
+Gerçek kişisel bilgi veya başka yerde kullandığın parola girme.
