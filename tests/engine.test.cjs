@@ -1,0 +1,11 @@
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const {games,cpus,gpus,evaluate} = require('../engine.js');
+const high={cpu:cpus.at(-1).name,gpu:'AMD Radeon RX 7800 XT',ram:64,vram:16};
+test('recommended hardware receives three points',()=>{for(const g of games)assert.equal(evaluate(high,g).score,3,g.name)});
+test('insufficient memory prevents compatibility',()=>{const g=games.find(g=>g.name==='Elden Ring');assert.equal(evaluate({...high,ram:4},g).score,0)});
+test('insufficient VRAM prevents compatibility despite fast GPU',()=>{const g=games.find(g=>g.name==='Cyberpunk 2077');assert.equal(evaluate({...high,vram:2},g).score,0)});
+test('hardware near minimum receives one point',()=>{const g=games.find(g=>g.name==='Elden Ring');assert.equal(evaluate({...high,ram:12},g).score,1)});
+test('above minimum but below recommended receives two points',()=>{const g=games.find(g=>g.name==='Elden Ring');assert.equal(evaluate({...high,vram:4},g).score,2)});
+test('integrated graphics can run light games but not demanding games',()=>{const p={cpu:cpus[0].name,gpu:gpus[0].name,ram:4,vram:1};assert.ok(evaluate(p,games.find(g=>g.name==='Stardew Valley')).score>0);assert.equal(evaluate(p,games.find(g=>g.name==='Cyberpunk 2077')).score,0)});
+test('unknown hardware does not produce a recommendation',()=>assert.equal(evaluate({...high,gpu:'unknown'},games[0]).score,0));
