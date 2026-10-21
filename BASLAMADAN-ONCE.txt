@@ -1,4 +1,4 @@
-OYUN RADARI — DEMO v4
+OYUN RADARI — DEMO v5
 
 1. ZIP'i klasöre çıkar.
 2. DEMOYU-AC.html dosyasına çift tıkla.
@@ -6,7 +6,13 @@ OYUN RADARI — DEMO v4
 
 Admin: admin@oyunradari.test / RadarDemo!2026
 
-GELISTIRME-RAPORU.html: yapılanlar, eksikler, aylık maliyet,
+V5 YENİ: forum kategori dizini, konu/son etkinlik sütunları,
+yenilenen yanıt görünümü. Forum > Arama: kelime, üye, tarih
+aralığı ve başlık/yanıt filtreleri. Sonuçtan ilgili yanıta git.
+
+GELISTIRME-RAPORU.html: güncel forum ve arama raporu.
+Önceki ayrıntılı rapor docs/V4-DURUM-MALIYET-VE-MEMURIYET.md:
+ yapılanlar, eksikler, aylık maliyet,
 657'ye tabi memuriyet, reklam geliri/site satışı ve API açıklaması.
 
 YENİ: üye medya yüklemesi kaldırıldı. Bildirimler, mesaj silme,

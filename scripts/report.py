@@ -2,7 +2,7 @@
 from pathlib import Path
 import html,re
 root=Path(__file__).resolve().parent.parent
-s=(root/'docs/V4-DURUM-MALIYET-VE-MEMURIYET.md').read_text()
+s=(root/'docs/V5-FORUM-TASARIM-VE-ARAMA.md').read_text()
 def inline(t):
     t=html.escape(t)
     t=re.sub(r'\[([^\]]+)\]\((https://[^)]+)\)',r'<a href="\2" target="_blank" rel="noopener noreferrer">\1</a>',t)
@@ -25,5 +25,5 @@ for line in s.splitlines():
     elif line.strip():out.append('<p>'+inline(line)+'</p>')
 if table:out.append('</tbody></table></div>')
 if listing:out.append('</ul>')
-(root/'GELISTIRME-RAPORU.html').write_text('''<!doctype html><html lang="tr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Oyun Radarı v4 — Durum, maliyet ve memuriyet</title><style>body{margin:0;background:#f3f6ef;color:#20382b;font:16px/1.8 system-ui}main{max-width:1080px;margin:auto;padding:36px 24px 90px}h1{font-size:34px;line-height:1.3}h2{margin-top:50px;border-bottom:2px solid #cde894;padding-bottom:12px}p,li{max-width:900px}a{color:#236d4c;text-underline-offset:3px}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px;background:white}td,th{border:1px solid #d7e0d1;padding:13px;text-align:left;vertical-align:top}th{background:#203f2c;color:white}tr:nth-child(even){background:#eef5e7}li{margin:10px 0}@media(prefers-color-scheme:dark){body{background:#12231b;color:#e4eedf}table{background:#1e3427}tr:nth-child(even){background:#274331}a{color:#cde894}}</style><main>'''+''.join(out)+'</main></html>')
+(root/'GELISTIRME-RAPORU.html').write_text('''<!doctype html><html lang="tr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Oyun Radarı v5 — Forum tasarımı ve arama</title><style>body{margin:0;background:#f3f6ef;color:#20382b;font:16px/1.8 system-ui}main{max-width:1080px;margin:auto;padding:36px 24px 90px}h1{font-size:34px;line-height:1.3}h2{margin-top:50px;border-bottom:2px solid #cde894;padding-bottom:12px}p,li{max-width:900px}a{color:#236d4c;text-underline-offset:3px}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px;background:white}td,th{border:1px solid #d7e0d1;padding:13px;text-align:left;vertical-align:top}th{background:#203f2c;color:white}tr:nth-child(even){background:#eef5e7}li{margin:10px 0}@media(prefers-color-scheme:dark){body{background:#12231b;color:#e4eedf}table{background:#1e3427}tr:nth-child(even){background:#274331}a{color:#cde894}}</style><main>'''+''.join(out)+'</main></html>')
 print('GELISTIRME-RAPORU.html generated')

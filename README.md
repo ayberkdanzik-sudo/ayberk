@@ -1,4 +1,4 @@
-# Oyun Radarı — Topluluk demosu v4
+# Oyun Radarı — Topluluk demosu v5
 
 ## Kurulumsuz aç
 
@@ -11,6 +11,12 @@ Forum > **Demo hesaplarını dene** > **admin** ile yönetim panelini açabilirs
 - Diğer örnek hesaplar: PixelGezgin, KareHizi. Hesap seçicisinden tek tıkla geçiş yapılır.
 
 Bunlar yalnızca bu prototip için oluşturulmuş, herkese açık demo kimlikleridir. Gerçek kişisel bilgi veya başka yerde kullandığın bir parolayı girme. Birden fazla cihaz/kullanıcı arasında veri paylaşılmaz; her şey tarayıcıda saklanır.
+
+## v5: forum dizini ve gelişmiş arama
+
+Forum kategorileri, konu satırları, son etkinlik ve yanıt görünümü yenilendi. Arama paneli: anahtar sözcük, gönderen üye, tarih aralığı, başlık/yanıt türü ve sıralama. Sonuçlar ilgili yanıtın bulunduğu sayfaya gider. Referans StrategyTurk sitesine erişim 403 ile engellendi; canlı tasarım incelemesi yapılamadı.
+
+Güncel rapor: [V5-FORUM-TASARIM-VE-ARAMA.md](docs/V5-FORUM-TASARIM-VE-ARAMA.md). Arama testleri: `npm run test:forum`; tek dosya için `DEMO_URL=http://127.0.0.1:3000/DEMOYU-AC.html npm run test:forum`.
 
 ## v4: metin topluluğu ve alışveriş demosu
 
