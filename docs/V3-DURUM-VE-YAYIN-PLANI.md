@@ -1,3 +1,5 @@
+> Bu dosya v3 tarihçesidir. Güncel rapor: V4-DURUM-MALIYET-VE-MEMURIYET.md. Üye medya yüklemesi v4 sürümünde kaldırılmıştır.
+
 # Oyun Radarı v3 — Durum ve yayın planı
 
 19 Ekim 2026 · Yerel demo sürümü. Gerçek site yayını yapılmadı.

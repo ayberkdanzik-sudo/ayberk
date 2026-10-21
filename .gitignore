@@ -5,3 +5,5 @@ node_modules/
 __pycache__/
 *.log
 .DS_Store
+data/price-feed.json.lock
+data/price-feed.json.tmp

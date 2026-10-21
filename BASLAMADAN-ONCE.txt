@@ -1,23 +1,26 @@
-OYUN RADARI — DEMO v3
+OYUN RADARI — DEMO v4
 
-1. ZIP dosyasını bir klasöre çıkar.
+1. ZIP'i klasöre çıkar.
 2. DEMOYU-AC.html dosyasına çift tıkla.
-3. Forum > Demo hesaplarını dene > admin ile yönetici olarak gez.
+3. Forum > Demo hesaplarını dene > admin.
 
-Admin e-posta: admin@oyunradari.test
-Demo parola: RadarDemo!2026
+Admin: admin@oyunradari.test / RadarDemo!2026
 
-GELISTIRME-RAPORU.html: yapılanlar/yapılmayanlar, nedenler,
-çözümler, benchmark/API kaynakları, maliyet ve reklam planı.
+GELISTIRME-RAPORU.html: yapılanlar, eksikler, aylık maliyet,
+657'ye tabi memuriyet, reklam geliri/site satışı ve API açıklaması.
 
-Yeni: 9 reklam panosu, gece/gündüz, iletişim başvuruları,
-üye yönetimi, yerel raporlar, alıntılı cevap, konu takibi,
-nickname arama ve medya sınıflandırma senaryoları.
+YENİ: üye medya yüklemesi kaldırıldı. Bildirimler, mesaj silme,
+yönetici hatırlatıcıları, üç noktalı forum menüleri, yenilenen
+yönetim/mesajlaşma ve Donanım / Alışveriş bölümü.
 
-İçerik denetiminde 3 güvenli test görseli oluşturabilirsin.
-Sınıflandırma simülasyondur, gerçek AI analiz servisi değildir.
+15 bilinen ürün modeli vardır. Mağaza fiyatları bu oturumda
+DOĞRULANAMADI. Bağlantılar mağaza aramasıdır. Örnek fiyat
+modundaki tutarlar GERÇEK MAĞAZA TEKLİFİ DEĞİLDİR.
 
-Veriler sadece bu tarayıcıda saklanır. Gerçek e-posta servisi,
-otomatik yeni oyun güncellemesi ve üretim güvenliği yoktur.
-Üyelikte telefon istenmez; reklam başvurusunda istenir.
-Gerçek kişisel bilgi veya başka yerde kullandığın parola girme.
+Otomatik fiyat işi altyapısı var; gerçek API/ürün akışı anlaşması,
+sunucu ve zamanlayıcı bağlanmadı. File:// demo canlı veri okumaz.
+
+Reklam görseli/başlığı/butonu adminin HTTPS hedefini açar.
+Mesaj silme yalnızca kendi görünümünden siler.
+Tüm topluluk verileri aynı tarayıcıda tutulur. Gerçek kişisel
+bilgi/parola girme. Gerçek üyelik ve e-posta servisi bağlı değil.
