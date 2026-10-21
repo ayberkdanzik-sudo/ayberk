@@ -1,37 +1,22 @@
-OYUN RADARI — DEMO v6
+OYUN RADARI — DEMO v7
 
 1. ZIP'i klasöre çıkar.
 2. DEMOYU-AC.html dosyasına çift tıkla.
-3. Forum > Demo hesaplarını dene > admin.
+3. Demo hesapları > admin: en üst Yönetici rolü.
+E-posta: admin@oyunradari.test / Parola: RadarDemo!2026
 
-Admin: admin@oyunradari.test / RadarDemo!2026
+Admin yetkisi vermek için: Yönetim > Üyeler > PixelGezgin >
+Yetki yönetimi > Admin > Yetkiyi kaydet.
+Sonra PixelGezgin hesabına geçerek kısıtlı paneli dene.
+Reklamlar ve reklam teklifleri sadece Yönetici hesabındadır.
 
-V6 YENİ: video referansından türetilen oyun köşeleri ve sağ
-konuşma sütunu. Siyah / kırmızı / turkuaz; logoda kehribar.
-Açık tema korunur. Dört etiketli örnek konu ve yanıt eklendi.
-GELISTIRME-RAPORU.html güncel görsel kimlik raporudur.
+V7: Özel mesajlar kaldırıldı. Bildirimler, gelen kutusu araması,
+rapor tarih aralığı, gece kontrastı ve yumuşak gündüz teması.
+GELISTIRME-RAPORU.html: durum, yetki planı, hosting/maliyet,
+patent, 657 memuriyet ve vergi sorularına cevaplar.
 
-V5 KORUNDU: forum kategori dizini, konu/son etkinlik sütunları,
-yenilenen yanıt görünümü. Forum > Arama: kelime, üye, tarih
-aralığı ve başlık/yanıt filtreleri. Sonuçtan ilgili yanıta git.
-
-GELISTIRME-RAPORU.html: güncel forum ve arama raporu.
-Önceki ayrıntılı rapor docs/V4-DURUM-MALIYET-VE-MEMURIYET.md:
- yapılanlar, eksikler, aylık maliyet,
-657'ye tabi memuriyet, reklam geliri/site satışı ve API açıklaması.
-
-YENİ: üye medya yüklemesi kaldırıldı. Bildirimler, mesaj silme,
-yönetici hatırlatıcıları, üç noktalı forum menüleri, yenilenen
-yönetim/mesajlaşma ve Donanım / Alışveriş bölümü.
-
-15 bilinen ürün modeli vardır. Mağaza fiyatları bu oturumda
-DOĞRULANAMADI. Bağlantılar mağaza aramasıdır. Örnek fiyat
-modundaki tutarlar GERÇEK MAĞAZA TEKLİFİ DEĞİLDİR.
-
-Otomatik fiyat işi altyapısı var; gerçek API/ürün akışı anlaşması,
-sunucu ve zamanlayıcı bağlanmadı. File:// demo canlı veri okumaz.
-
-Reklam görseli/başlığı/butonu adminin HTTPS hedefini açar.
-Mesaj silme yalnızca kendi görünümünden siler.
-Tüm topluluk verileri aynı tarayıcıda tutulur. Gerçek kişisel
-bilgi/parola girme. Gerçek üyelik ve e-posta servisi bağlı değil.
+Bu yerel bir demodur. Gerçek kişisel/ticari bilgi girmeyin.
+Sunucu, gerçek e-posta doğrulama ve sunucu yetkilendirmesi yok.
+Steam ve mağazalardan canlı veri gelmez; mağaza bağlantıları
+aramadır, örnek fiyatlar gerçek teklif değildir.
+Eski yerel özel mesajlar yeni sürüm açıldığında temizlenir.

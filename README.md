@@ -1,4 +1,4 @@
-# Oyun Radarı — Topluluk demosu v6
+# Oyun Radarı — Topluluk demosu v7
 
 ## Kurulumsuz aç
 
@@ -11,6 +11,10 @@ Forum > **Demo hesaplarını dene** > **admin** ile yönetim panelini açabilirs
 - Diğer örnek hesaplar: PixelGezgin, KareHizi. Hesap seçicisinden tek tıkla geçiş yapılır.
 
 Bunlar yalnızca bu prototip için oluşturulmuş, herkese açık demo kimlikleridir. Gerçek kişisel bilgi veya başka yerde kullandığın bir parolayı girme. Birden fazla cihaz/kullanıcı arasında veri paylaşılmaz; her şey tarayıcıda saklanır.
+
+## v7: roller, okunaklı temalar ve yönetim filtreleri
+
+Özel mesajlaşma kaldırıldı. Yönetici > Admin > Üye rolleri var. Yönetim > Üyeler > profil > Yetki yönetimi ile admin verilir/geri alınır. Reklamlar ve ticari başvurular sadece yöneticiye açıktır. Gelen kutusunda kelime/üye/tarih; raporlarda tarih aralığı filtresi eklendi. Bildirimler forum yanıtlarını, alıntıları ve başvuru cevaplarını açar. Gündüz zemini yumuşatıldı; gece kontrastı düzeltildi. Güncel durum, maliyet ve hukuki çerçeve: docs/V7-YETKILER-VE-YAYIN-PLANI.md. Aşağıdaki eski sürüm notları geçmişi açıklar.
 
 ## v6: video referansı ve yeni görsel kimlik
 

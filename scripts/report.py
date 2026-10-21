@@ -2,7 +2,7 @@
 from pathlib import Path
 import html,re
 root=Path(__file__).resolve().parent.parent
-s=(root/'docs/V6-GORSEL-KIMLIK.md').read_text()
+s=(root/'docs/V7-YETKILER-VE-YAYIN-PLANI.md').read_text()
 def inline(t):
     t=html.escape(t)
     t=re.sub(r'\[([^\]]+)\]\((https://[^)]+)\)',r'<a href="\2" target="_blank" rel="noopener noreferrer">\1</a>',t)

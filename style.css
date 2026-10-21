@@ -69,3 +69,24 @@ body{background:var(--paper);color:var(--ink)}.brand-icon{background:var(--brand
 [data-theme=dark] :is(.selected,.category.selected,.category-chip.active,.conversation.selected,.admin-sidebar-v4 button.selected){background:var(--soft)!important;color:var(--accent)!important}
 [data-theme=dark] .forum-category-strip .forum-category.selected{background:transparent!important;color:var(--accent)!important}[data-theme=dark] .btn-dark{background:var(--action)!important;color:white!important}[data-theme=dark] .btn-lime{background:#76e2da!important;color:#0b3436!important}[data-theme=dark] .forum-masthead .btn-lime{background:#dc4152!important;color:white!important}[data-theme=dark] .performance.s3{color:#73d9cd}[data-theme=dark] .performance.s2{color:#e7be7b}[data-theme=dark] .performance.s1{color:#ed919b}[data-theme=dark] .forum-topic-row .topic-reply-count{background:none!important}[data-theme=dark] .game-title,[data-theme=dark] .card-content>p{color:var(--ink)}[data-theme=dark] .dashboard-welcome h2{color:white}
 .game-lounge img{height:210%;object-position:70% top;transform:none}.game-lounge:hover img{transform:scale(1.04)}:root{--action:#c93247}[data-theme=dark]{--action:#d23e50}.forum-masthead .btn-lime,[data-theme=dark] .forum-masthead .btn-lime{background:#c93247!important}.forum-category-strip .forum-category>span{color:inherit!important}@media(prefers-reduced-motion:reduce){.game-lounge:hover img{transform:none}}
+/* v7: shared readable surfaces in both themes. */
+:root{--paper:#e4eae7;--surface:#f1f4ef;--soft:#dce5df;--ink:#202e32;--muted:#485e65;--line:#bdccc6}
+html[data-theme="dark"]{--paper:#101418;--surface:#181e24;--soft:#232e36;--ink:#f0f4f6;--muted:#b4c3cb;--line:#3e4d57}
+html,body{min-height:100%;background:var(--paper);color:var(--ink)}body{min-height:100vh}
+.empty-state,.task-clear,.demo-code,.review-text,.notification-list,.role-form{background:var(--soft);color:var(--ink);border-color:var(--line)}
+.empty-state h2,.empty-state h3,.empty-state p,.review-text,.empty-state strong{color:var(--ink);opacity:1}
+.empty-state p,.fineprint,.muted,.admin-description,.studio-card small,.topic-meta,.thread-author small,.notification-row small,.notification-row time{color:var(--muted);opacity:1;font-size:13px;line-height:1.6}
+.mini-label,.eyebrow{font-size:11px}.hero-caption,footer button,footer a,.forum-category,.category-chip,.topic-labels,.sample-tag{font-size:12px}
+.auth-form input,.auth-form textarea,.auth-form select,.filter-panel input,.filter-panel select{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+input::placeholder,textarea::placeholder{color:var(--muted);opacity:1}select option{background:var(--surface);color:var(--ink)}
+.pending-tag{background:var(--soft);color:var(--ink);border:1px solid var(--line);font-size:12px}
+.modal-close{background:var(--soft);color:var(--ink)}
+.filter-panel{display:flex;flex-wrap:wrap;align-items:end;gap:12px;padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin:20px 0}
+.filter-panel label{display:grid;gap:7px;flex:1 1 150px;font-size:13px;font-weight:600}.filter-panel input{width:100%;min-width:0;padding:11px;border-radius:7px;font:inherit}.filter-panel .form-error{flex-basis:100%;margin:0}.filter-panel .form-error:empty{display:none}
+.notification-row{grid-template-columns:10px 1fr 20px;gap:14px;background:var(--surface);color:var(--ink);text-align:left}.notification-dot{width:8px;height:8px;background:#ef5264;border-radius:50%;align-self:start;margin-top:7px}.notification-row strong{font-size:15px;line-height:1.5}.notification-row small{display:block;margin:4px 0}.notification-list{background:transparent}.role-form{padding:18px;margin:20px 0;border-radius:12px}
+@media(max-width:600px){.filter-panel label{flex-basis:100%}.filter-panel button{flex:1}.hero-caption{font-size:12px}}
+.admin-heading>div>p,.feature-notice,.demo-notice,.forum-rules p{color:var(--muted);font-size:14px;line-height:1.65}
+.feature-notice,.demo-notice{background:var(--soft);border-color:var(--line)}
+.admin-sidebar-v4 button{font-size:14px}.admin-sidebar-v4 .mini-label,.admin-heading .mini-label,.section-heading .mini-label{color:var(--muted);font-size:11px}
+.admin-shortcut,.role-badge{color:var(--ink);background:var(--soft);border-color:var(--line)}
+footer small,footer .footer-tagline{color:var(--muted);font-size:11px}

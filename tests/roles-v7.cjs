@@ -1,0 +1,27 @@
+const {chromium}=require('playwright'),assert=require('node:assert/strict');
+(async()=>{
+const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto(process.env.DEMO_URL||'http://127.0.0.1:3000');await page.waitForSelector('.game-card');
+const login=async nick=>{await page.locator('[data-v2=demo-users]').last().click();await page.locator(`[data-demo-user="${nick}"]`).click()};
+const close=async()=>page.locator('[data-action=close]').click();
+await login('admin');assert.equal(await page.evaluate(()=>user.role),'owner');
+await page.locator('[data-v2=admin]').first().click();await page.locator('[data-admin-tab=members]').click();await page.locator('[data-member=PixelGezgin]').click();await page.locator('#role-form select').selectOption('admin');await page.locator('#role-form button').click();
+await page.evaluate(()=>{
+contacts=[{id:'private-ad',kind:'ad',company:'Gizli marka',body:'Gizli ticari teklif',author:'KareHizi',date:Date.parse('2026-10-10T12:00:00+03:00'),status:'new'},{id:'suggestion-1',kind:'suggestion',body:'Kütüphane önerisi',author:'KareHizi',date:Date.parse('2026-10-12T12:00:00+03:00'),status:'new'},{id:'suggestion-2',kind:'suggestion',body:'Kütüphane ikinci öneri',author:'PixelGezgin',date:Date.parse('2026-10-13T12:00:00+03:00'),status:'new'}];write('contacts',contacts);
+campaigns=[{id:'secret-campaign',title:'Gizli marka',company:'Gizli marka',enabled:true,url:'https://example.com',createdAt:Date.now()}];write('campaigns',campaigns);
+adminTasks=[{id:'owner-task',owner:'admin',text:'Gizli teklif görüşmesi',done:false}];write('admin-tasks',adminTasks);render();
+});
+await page.locator('[data-admin-tab=contacts]').click();await page.locator('#inbox-filter [name=keyword]').fill('Kütüphane');await page.locator('#inbox-filter [name=sender]').fill('KareHizi');await page.locator('#inbox-filter [name=from]').fill('2026-10-12');await page.locator('#inbox-filter [name=to]').fill('2026-10-12');await page.locator('#inbox-filter .btn-dark').click();assert.equal(await page.locator('[data-contact-id]').count(),1);await page.locator('[data-contact-id=suggestion-1]').click();await page.locator('#contact-review [name=reply]').fill('Önerin için teşekkürler.');await page.locator('#contact-review [name=status]').selectOption('replied');await page.locator('#contact-review button').click();
+await login('KareHizi');await page.locator('[data-v4=notifications]').click();assert.match(await page.locator('.notification-list').innerText(),/admin başvurunu yanıtladı/);await page.locator('[data-notification^="contact:"]').click();assert.match(await page.locator('.modal').innerText(),/Önerin için teşekkürler/);await close();
+await login('PixelGezgin');assert.equal(await page.evaluate(()=>user.role),'admin');await page.locator('[data-v2=admin]').first().click();assert.equal(await page.locator('[data-admin-tab=ads],[data-admin-tab=audit]').count(),0);assert.doesNotMatch(await page.locator('main').innerText(),/Gizli/);
+await page.locator('[data-admin-tab=contacts]').click();await page.locator('[data-v7=clear-inbox]').click();assert.equal(await page.locator('[data-contact-filter=ad],[data-contact-id=private-ad]').count(),0);
+await page.evaluate(()=>contactDetail('private-ad'));assert.equal(await page.locator('#contact-review').count(),0);await page.evaluate(()=>campaignEditor('secret-campaign'));assert.equal(await page.locator('#campaign-form').count(),0);
+await page.evaluate(()=>{adminTab='ads';render()});assert.equal(await page.evaluate(()=>adminTab),'overview');
+await page.locator('[data-admin-tab=reports]').click();assert.doesNotMatch(await page.locator('.metric-grid').innerText(),/reklam|Firma/);assert.equal(await page.locator('.chart').count(),3);
+await page.locator('#report-range [name=from]').fill('2026-10-01');await page.locator('#report-range [name=to]').fill('2026-10-15');await page.locator('#report-range button').click();assert.match(await page.locator('.admin-content').innerText(),/Seçilen aralık: 2026-10-01/);await page.locator('[data-period=day]').click();assert.equal(await page.evaluate(()=>reportPeriod),'day');
+await page.locator('[data-admin-tab=members]').click();await page.locator('[data-member=admin]').click();assert.equal(await page.locator('#member-action,#role-form').count(),0);await close();
+await login('admin');await page.locator('[data-v2=admin]').first().click();await page.locator('[data-admin-tab=members]').click();await page.locator('[data-member=PixelGezgin]').click();await page.locator('#role-form select').selectOption('member');await page.locator('#role-form button').click();await login('PixelGezgin');assert.equal(await page.evaluate(()=>user.role),'member');assert.equal(await page.locator('[data-v2=admin]').count(),0);
+await login('admin');
+for(const theme of ['dark','light'])for(const tab of ['moderation','ads','contacts','reports']){await page.evaluate(({theme,tab})=>{setTheme(theme);view='admin';adminTab=tab;render()},{theme,tab});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:`/tmp/v7-${theme}-${tab}.png`,fullPage:true});}
+assert.deepEqual(errors,[]);await browser.close();console.log('PASS role grant/revoke, protected owner, commercial isolation, inbox filters, response notifications and report dates');
+})().catch(e=>{console.error(e);process.exit(1)});

@@ -1,6 +1,6 @@
 {
   "name": "oyun-radari-demo",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "private": true,
   "scripts": {
     "dev": "python3 -m http.server 3000 --bind 0.0.0.0",
@@ -11,6 +11,7 @@
     "report": "python3 scripts/report.py",
     "sync:prices": "node scripts/sync-prices.cjs",
     "test:forum": "node tests/forum-browser.cjs",
-    "test:visual": "node tests/visual-v6.cjs"
+    "test:visual": "node tests/visual-v6.cjs",
+    "test:roles": "node tests/roles-v7.cjs"
   }
 }
