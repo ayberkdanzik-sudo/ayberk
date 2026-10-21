@@ -1,4 +1,4 @@
-# Oyun Radarı — Topluluk demosu v5
+# Oyun Radarı — Topluluk demosu v6
 
 ## Kurulumsuz aç
 
@@ -11,6 +11,12 @@ Forum > **Demo hesaplarını dene** > **admin** ile yönetim panelini açabilirs
 - Diğer örnek hesaplar: PixelGezgin, KareHizi. Hesap seçicisinden tek tıkla geçiş yapılır.
 
 Bunlar yalnızca bu prototip için oluşturulmuş, herkese açık demo kimlikleridir. Gerçek kişisel bilgi veya başka yerde kullandığın bir parolayı girme. Birden fazla cihaz/kullanıcı arasında veri paylaşılmaz; her şey tarayıcıda saklanır.
+
+## v6: video referansı ve yeni görsel kimlik
+
+Kullanıcının kısa ekran kaydı incelendi. Kömür siyahı, kırmızı, turkuaz ve logoya özel kehribar palet; görselli oyun köşeleri, son konuşmalar/katılımcılar sütunu, iki sütunlu kategori dizini ve yeni site renkleri. Referansın logosu veya görselleri kopyalanmadı. Dört örnek oyun konusu/yanıtı eklenir; kullanıcı içeriği korunur. İlk palet açılışı koyu, sonraki tema seçimi kalıcıdır.
+
+Güncel rapor: [V6-GORSEL-KIMLIK.md](docs/V6-GORSEL-KIMLIK.md). Görsel/işlev kontrolü: `npm run test:visual`. Tek dosya: `DEMO_URL=http://127.0.0.1:3000/DEMOYU-AC.html npm run test:visual`.
 
 ## v5: forum dizini ve gelişmiş arama
 

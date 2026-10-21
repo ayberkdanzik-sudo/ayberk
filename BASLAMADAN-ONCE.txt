@@ -1,4 +1,4 @@
-OYUN RADARI — DEMO v5
+OYUN RADARI — DEMO v6
 
 1. ZIP'i klasöre çıkar.
 2. DEMOYU-AC.html dosyasına çift tıkla.
@@ -6,7 +6,12 @@ OYUN RADARI — DEMO v5
 
 Admin: admin@oyunradari.test / RadarDemo!2026
 
-V5 YENİ: forum kategori dizini, konu/son etkinlik sütunları,
+V6 YENİ: video referansından türetilen oyun köşeleri ve sağ
+konuşma sütunu. Siyah / kırmızı / turkuaz; logoda kehribar.
+Açık tema korunur. Dört etiketli örnek konu ve yanıt eklendi.
+GELISTIRME-RAPORU.html güncel görsel kimlik raporudur.
+
+V5 KORUNDU: forum kategori dizini, konu/son etkinlik sütunları,
 yenilenen yanıt görünümü. Forum > Arama: kelime, üye, tarih
 aralığı ve başlık/yanıt filtreleri. Sonuçtan ilgili yanıta git.
 
